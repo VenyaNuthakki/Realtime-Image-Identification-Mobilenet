@@ -1,7 +1,8 @@
 function setup() {
   canvas = createCanvas(300, 300);
   canvas.center();
-  video = createCapture(VIDEO);
+  var constraints = { audio: false, video: { facingMode: { exact: "environment" } } };
+  video = createCapture(constraints);
   video.hide();
   classifier=ml5.imageClassifier("MobileNet", modelloaded);
 }
